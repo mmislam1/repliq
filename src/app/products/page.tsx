@@ -19,6 +19,7 @@ export default function ProductsPage() {
     const router = useRouter()
     const [products, setProducts] = useState(list)
     
+    
 
 
     const onCreate = async () => {
@@ -29,7 +30,7 @@ export default function ProductsPage() {
     
     const getUserDetails = async () => {console.log('heyre')
         const res = await axios.get('/api/products/list')
-        console.log(res);
+        console.log(res.data.data);
         
         
         setProducts(res.data.data)

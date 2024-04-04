@@ -25,7 +25,7 @@ export const productsslice = createSlice({
     getProducts: (state) => {
           state.list = async () => {
         const res = await axios.get('/api/products/list')
-            console.log(res);
+            console.log(res.data.data);
             console.log('hey')
         
         

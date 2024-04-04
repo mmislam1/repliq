@@ -16,6 +16,7 @@ export default function ProductsPage() {
     //dispatch(products())
     const list = useSelector((state: RootState) => state.products.list)
     const [products, setProducts] = useState(list)
+    
     const onCreate = async () => {
         
     }
@@ -24,10 +25,10 @@ export default function ProductsPage() {
     
     const getUserDetails = async () => {
         const res = await axios.get('/api/products/list')
-        console.log(res);
-        console.log("nothing")
+        console.log(res.data.data);
         
-        setProducts(res.data.data)
+        
+        
     }
     
     
