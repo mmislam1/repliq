@@ -11,7 +11,7 @@ import axios from "axios";
 export default function LoginPage() {
     const router = useRouter();
     const [user, setUser] = React.useState({
-        email: "",
+        phone: "",
         password: "",
        
     })
@@ -34,7 +34,7 @@ export default function LoginPage() {
     }
 
     useEffect(() => {
-        if(user.email.length > 0 && user.password.length > 0) {
+        if(user.phone.length > 0 && user.password.length > 0) {
             setButtonDisabled(false);
         } else{
             setButtonDisabled(true);
@@ -46,14 +46,14 @@ export default function LoginPage() {
         <h1>{loading ? "Processing" : "Login"}</h1>
         <hr />
         
-        <label htmlFor="email">email</label>
+        <label htmlFor="phone">phone</label>
         <input 
         className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
-            id="email"
+            id="phone"
             type="text"
-            value={user.email}
-            onChange={(e) => setUser({...user, email: e.target.value})}
-            placeholder="email"
+            value={user.phone}
+            onChange={(e) => setUser({...user, phone: e.target.value})}
+            placeholder="phone"
             />
         <label htmlFor="password">password</label>
         <input 
