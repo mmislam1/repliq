@@ -25,7 +25,7 @@ export default function ProductsPage() {
     
     const getUserDetails = async () => {
         const res = await axios.get('/api/products/list')
-        console.log(res.data.data);
+        
         
         
         

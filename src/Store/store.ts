@@ -1,3 +1,5 @@
+"use client";
+
 import { configureStore } from '@reduxjs/toolkit'
 import { useReducer } from 'react'
 import userReducer from './userslice'

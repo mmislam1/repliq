@@ -7,18 +7,18 @@ import {useRouter} from "next/navigation";
 import type { RootState } from '../../Store/store'
 import { useSelector, useDispatch } from 'react-redux'
 import { getProducts} from '../../Store/productsslice'
-const dispatch = useDispatch()
-dispatch(getProducts())
 
 
 export default function ProductsPage() {
-    
+    const dispatch = useDispatch()
+    dispatch(getProducts())
+
     
     
     const list = useSelector((state: RootState) => state.products.list)
     const router = useRouter()
     const [products, setProducts] = useState(list)
-    
+    //console.log(products)
     
 
 
@@ -30,10 +30,10 @@ export default function ProductsPage() {
     
     const getUserDetails = async () => {console.log('heyre')
         const res = await axios.get('/api/products/list')
-        console.log(res.data.data);
+        //console.log(res.data.data);
         
         
-        setProducts(res.data.data)
+        
     }
     
     
@@ -67,17 +67,7 @@ export default function ProductsPage() {
 
             <div className="flex flex-col p-4 min-w-80 bg-white">
                 <ul>
-                    {products.map((product: { _id: any; name: string; price: number; details: string; count: number }) => (
-          <li className="p-2" key={product._id}>
-                            <div>
-                                <h2>{product.name}</h2>
-                                <h4>{product.count } Available right now</h4>
-                            </div>
-                            <h4>{product.price}</h4>
-                            <h2 className="p-1 rounded bg-green-500"><Link href={`/products/${product._id}`}>Details
-            </Link></h2>
-          </li>
-        ))}
+                    
       </ul>
 
     </div>

@@ -23,13 +23,15 @@ export const productsslice = createSlice({
   reducers: {
     
     getProducts: (state) => {
-          state.list = async () => {
-        const res = await axios.get('/api/products/list')
-            console.log(res.data.data);
-            console.log('hey')
+          const res = async () => {
+        const x=await axios.get('/api/products/list')
         
+        return x
         
-}
+      }
+
+      console.log(res)
+      //state.list=res.data.data
     },
     
   },
